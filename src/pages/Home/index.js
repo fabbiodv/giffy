@@ -3,6 +3,7 @@ import { useLocation } from "wouter"
 import ListOfGifs from 'components/ListOfGifs'
 import {useGifs} from 'hooks/useGifs'
 import TrendingSearches from 'components/TrendingSearches'
+import { Helmet } from "react-helmet"
 
 export default function Home() {
   const [keyword, setKeyword] = useState('')
@@ -21,6 +22,9 @@ export default function Home() {
 
   return (
     <>
+      <Helmet>
+        <title>Home || Giffy </title>
+      </Helmet>
       <form onSubmit={handleSubmit}>
         <button>Buscar</button>
         <input placeholder="Search a gif here..." onChange={handleChange} type='text' value={keyword} />
